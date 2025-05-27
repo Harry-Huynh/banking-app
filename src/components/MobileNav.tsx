@@ -28,20 +28,22 @@ const MobileNav = ({ user }: MobileNavProps) => {
           />
         </SheetTrigger>
         <SheetContent side="left" className="border-none w-fit">
-          <Link
-            href="/"
-            className="mb-10 cursor-pointer items-center gap-1 flex px-4"
-          >
-            <Image
-              src="/icons/logo.svg"
-              width={34}
-              height={34}
-              alt="HPH Logo"
-            />
-            <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
-              HPH Banking
-            </h1>
-          </Link>
+          <SheetClose asChild>
+            <Link
+              href="/"
+              className="mb-10 cursor-pointer items-center gap-1 flex px-4"
+            >
+              <Image
+                src="/icons/logo.svg"
+                width={34}
+                height={34}
+                alt="HPH Logo"
+              />
+              <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
+                HPH Banking
+              </h1>
+            </Link>
+          </SheetClose>
 
           <div className="mobilenav-sheet">
             <SheetClose asChild>
