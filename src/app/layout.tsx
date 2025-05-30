@@ -15,11 +15,17 @@ const ibmPlexSerif = IBM_Plex_Serif({
 
 export const metadata: Metadata = {
   title: "HPH Banking App",
-  description: "HPH Banking App is a modern banking application built with Next.js, Appwrite, and Tailwind CSS.",
-  authors: [{ name: "Hoang Phuc Huynh", url: "https://hoangphuchuynh-portfolio.vercel.app/"}],
+  description:
+    "HPH Banking App is a modern banking application built with Next.js, Appwrite, and Tailwind CSS.",
+  authors: [
+    {
+      name: "Hoang Phuc Huynh",
+      url: "https://hoangphuchuynh-portfolio.vercel.app/",
+    },
+  ],
   icons: {
     icon: "/icons/logo.svg",
-  }
+  },
 };
 
 export default function RootLayout({
