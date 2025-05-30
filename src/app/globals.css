@@ -448,7 +448,11 @@
 
   /* Footer */
   .footer {
-    @apply flex cursor-pointer items-center justify-between gap-2 py-6;
+    @apply flex cursor-pointer items-center justify-between gap-2 py-3;
+  }
+
+  .footer-mobile {
+    @apply flex cursor-pointer items-center justify-between gap-2 py-12;
   }
 
   .footer_name {
