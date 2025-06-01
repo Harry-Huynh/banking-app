@@ -67,9 +67,9 @@ export const formatDateTime = (dateString: Date) => {
 };
 
 export function formatAmount(amount: number): string {
-  const formatter = new Intl.NumberFormat("en-CA", {
+  const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "CAD",
+    currency: "USD",
     minimumFractionDigits: 2,
   });
 
@@ -207,26 +207,11 @@ export const authFormSchema = (type: string) =>
       type === "sign-in" ? z.string().optional() : z.string().min(2).max(2),
 
     postalCode:
-      type === "sign-in"
-        ? z.string().optional()
-        : z
-            .string()
-            .min(6, {
-              message: "Invalid postal code. Please follow the format: A1A1A1",
-            })
-            .max(6, {
-              message: "Invalid postal code. Please follow the format: A1A1A1",
-            }),
+      type === "sign-in" ? z.string().optional() : z.string().min(3).max(6),
 
     dateOfBirth: type === "sign-in" ? z.string().optional() : z.string().min(3),
 
-    SIN:
-      type === "sign-in"
-        ? z.string().optional()
-        : z
-            .string()
-            .min(11, { message: "Invalid SIN" })
-            .max(11, { message: "Invalid SIN" }),
+    ssn: type === "sign-in" ? z.string().optional() : z.string().min(3),
 
     // both
     email: z.string().email(),
