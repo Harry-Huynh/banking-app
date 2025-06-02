@@ -217,3 +217,10 @@ export const authFormSchema = (type: string) =>
     email: z.string().email(),
     password: z.string().min(8),
   });
+
+export const formatCategory = (category: string = ""): string => {
+  return category
+    .toLowerCase()
+    .replace(/_/g, " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+};
