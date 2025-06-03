@@ -12,7 +12,7 @@ import {
 } from "@/lib/actions/user.actions";
 import Image from "next/image";
 
-const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
+const PlaidLink = ({ user, variant, type = "desktop" }: PlaidLinkProps) => {
   const router = useRouter();
   const [token, setToken] = useState("");
 
@@ -80,12 +80,11 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
           <Image
             src="/icons/connect-bank.svg"
             alt="connect bank"
-            width={24}
-            height={24}
+            width={type === "mobile" ? 20 : 24}
+            height={type === "mobile" ? 20 : 24}
           />
-          <p className="text-[16px] font-semibold text-black-2 hidden xl:block">
-            Connect bank
-          </p>
+
+          <p className="text-[16px] font-semibold text-black-2">Connect bank</p>
         </Button>
       )}
     </>

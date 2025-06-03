@@ -7,9 +7,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Footer from "./Footer";
 import PlaidLink from "./PlaidLink";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 const Sidebar = ({ user }: SiderbarProps) => {
   const pathname = usePathname();
+  const isUnderXl = useMediaQuery("(max-width: 1280px)");
 
   return (
     <section className="sidebar">
@@ -31,7 +33,9 @@ const Sidebar = ({ user }: SiderbarProps) => {
             <Link
               href={item.route}
               key={item.label}
-              className={cn("sidebar-link", { "bg-bank-gradient": isActive })}
+              className={cn("sidebar-link", {
+                "bg-bank-gradient": isActive,
+              })}
             >
               <div className="relative size-6">
                 <Image
@@ -47,7 +51,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
             </Link>
           );
         })}
-        <PlaidLink user={user} />
+        <PlaidLink user={user} variant={isUnderXl ? "ghost" : undefined} />
       </nav>
 
       <Footer user={user} />

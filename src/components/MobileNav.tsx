@@ -19,7 +19,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
 
   return (
     <section className="w-full max-w-[264px]">
-      <Sheet>
+      <Sheet modal={false}>
         <SheetTrigger>
           <Image
             src="/icons/hamburger.svg"
@@ -48,45 +48,43 @@ const MobileNav = ({ user }: MobileNavProps) => {
           </SheetClose>
 
           <div className="mobilenav-sheet">
-            <SheetClose asChild>
-              <nav className="flex h-full flex-col gap-2 text-white">
-                {sidebarLinks.map((item) => {
-                  const isActive =
-                    pathname === item.route ||
-                    pathname.startsWith(`${item.route}/`);
-                  return (
-                    <SheetClose asChild key={item.route}>
-                      <Link
-                        href={item.route}
-                        key={item.label}
-                        className={cn("mobilenav-sheet_close w-full", {
-                          "bg-bank-gradient": isActive,
+            <nav className="flex h-full flex-col gap-2 text-white">
+              {sidebarLinks.map((item) => {
+                const isActive =
+                  pathname === item.route ||
+                  pathname.startsWith(`${item.route}/`);
+                return (
+                  <SheetClose asChild key={item.route}>
+                    <Link
+                      href={item.route}
+                      key={item.label}
+                      className={cn("mobilenav-sheet_close w-full", {
+                        "bg-bank-gradient": isActive,
+                      })}
+                    >
+                      <Image
+                        src={item.imgURL}
+                        alt={item.label}
+                        width={20}
+                        height={20}
+                        className={cn({
+                          "brightness-[3] invert-0": isActive,
+                        })}
+                      />
+
+                      <p
+                        className={cn("text-16 font-semibold text-black-2", {
+                          "text-white": isActive,
                         })}
                       >
-                        <Image
-                          src={item.imgURL}
-                          alt={item.label}
-                          width={20}
-                          height={20}
-                          className={cn({
-                            "brightness-[3] invert-0": isActive,
-                          })}
-                        />
-
-                        <p
-                          className={cn("text-16 font-semibold text-black-2", {
-                            "text-white": isActive,
-                          })}
-                        >
-                          {item.label}
-                        </p>
-                      </Link>
-                    </SheetClose>
-                  );
-                })}
-                <PlaidLink user={user} />
-              </nav>
-            </SheetClose>
+                        {item.label}
+                      </p>
+                    </Link>
+                  </SheetClose>
+                );
+              })}
+              <PlaidLink user={user} type="mobile" />
+            </nav>
 
             <Footer user={user} type="mobile" />
           </div>
