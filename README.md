@@ -66,7 +66,7 @@ A modern full-stack banking application that allows users to securely link exter
 
 ---
 
-## 🧪 Testing Information:
+## 🧪 Testing Information
 
 `To connect banks using Plaid`
 
