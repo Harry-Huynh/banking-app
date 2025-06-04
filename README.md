@@ -17,17 +17,18 @@ A modern full-stack banking application that allows users to securely link exter
 
 ---
 
-- [🏦 Banking Web Application](#-banking-web-application)
-  - [🔗 Project Links](#-project-links)
-  - [🚀 Features](#-features)
-  - [🧪 Testing Information](#-testing-information)
-  - [🌱 Environment Variable](#-environment-variable)
-  - [📦 Dependencies](#-dependencies)
-  - [🔐 Authentication Flow (Appwrite)](#-authentication-flow-appwrite)
-  - [🌐 API \& Service Integrations](#-api--service-integrations)
-  - [🧩 Key Components \& Pages](#-key-components--pages)
-  - [🛡️ Route Protection Flow](#️-route-protection-flow)
-  - [📌 Notes](#-notes)
+## 📚 Table of Contents
+
+- [🔗 Project Links](#-project-links)
+- [🚀 Features](#-features)
+- [🧪 Testing Information](#-testing-information)
+- [🌱 Environment Variable](#-environment-variable)
+- [📦 Dependencies](#-dependencies)
+- [🔐 Authentication Flow (Appwrite)](#-authentication-flow-appwrite)
+- [🌐 API \& Service Integrations](#-api--service-integrations)
+- [🧩 Key Components \& Pages](#-key-components--pages)
+- [🛡️ Route Protection Flow](#️-route-protection-flow)
+ - [📌 Notes](#-notes)
 
 ---
 
