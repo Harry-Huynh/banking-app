@@ -6,6 +6,7 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38bdf8?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![shadcn/ui](https://img.shields.io/badge/shadcn/ui-000000?style=for-the-badge&logo=vercel&logoColor=white)
 ![Appwrite](https://img.shields.io/badge/Appwrite-F02E65?style=for-the-badge&logo=appwrite&logoColor=white)
+![Sentry](https://img.shields.io/badge/Sentry-362D59?style=for-the-badge&logo=sentry&logoColor=white)
 ![Plaid](https://img.shields.io/badge/Plaid-000000?style=for-the-badge&logo=plaid&logoColor=white)
 ![Dwolla](https://img.shields.io/badge/Dwolla-FF6B00?style=for-the-badge&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
@@ -19,16 +20,17 @@ A modern full-stack banking application that allows users to securely link exter
 
 ## 📚 Table of Contents
 
-- [🔗 Project Links](#-project-links)
-- [🚀 Features](#-features)
-- [🧪 Testing Information](#-testing-information)
-- [🌱 Environment Variable](#-environment-variable)
-- [📦 Dependencies](#-dependencies)
-- [🔐 Authentication Flow (Appwrite)](#-authentication-flow-appwrite)
-- [🌐 API \& Service Integrations](#-api--service-integrations)
-- [🧩 Key Components \& Pages](#-key-components--pages)
-- [🛡️ Route Protection Flow](#️-route-protection-flow)
- - [📌 Notes](#-notes)
+- [🏦 Banking Web Application](#-banking-web-application)
+  - [🔗 Project Links](#-project-links)
+  - [🚀 Features](#-features)
+  - [🧪 Testing Information](#-testing-information)
+  - [🌱 Environment Variable](#-environment-variable)
+  - [📦 Dependencies](#-dependencies)
+  - [🔐 Authentication Flow (Appwrite)](#-authentication-flow-appwrite)
+  - [🌐 API \& Service Integrations](#-api--service-integrations)
+  - [🧩 Key Components \& Pages](#-key-components--pages)
+  - [🛡️ Route Protection Flow](#️-route-protection-flow)
+  - [📌 Notes](#-notes)
 
 ---
 
@@ -63,6 +65,12 @@ A modern full-stack banking application that allows users to securely link exter
 - View and classify transactions by date, channel, status, and category
 - Real-time updates on transaction status
 - Display top categories based on transaction history
+
+⚠️ `Error Monitoring with Sentry`
+
+- Full-stack error tracking
+- Real-time performance monitoring
+- Context-rich debugging
 
 🎨 `Responsive Design with Tailwind CSS and shadcn/ui`
 
@@ -120,6 +128,10 @@ DWOLLA_KEY=
 DWOLLA_SECRET=
 DWOLLA_BASE_URL=
 DWOLLA_ENV=
+
+#SENTRY
+SENTRY_AUTH_TOKEN=
+
 ```
 
 ---
@@ -134,6 +146,7 @@ DWOLLA_ENV=
 - `plaid`: Plaid Node Software Development Kit (SDK)
 - `dwolla-v2`: Dwolla Software Development Kit (SDK)
 - `appwrite`: Appwrite SDK for auth and DB
+- `@sentry/nextjs`: Error tracking
 
 ---
 
@@ -148,11 +161,12 @@ DWOLLA_ENV=
 
 ## 🌐 API & Service Integrations
 
-| Service      | Description                                      |
-| ------------ | ------------------------------------------------ |
-| **Plaid**    | Fetches account info, balances, and transactions |
-| **Dwolla**   | Initiates money transfers                        |
-| **Appwrite** | Handles auth and stores user-related data        |
+| Service      | Description                                           |
+| ------------ | ----------------------------------------------------- |
+| **Plaid**    | Fetches account info, balances, and transactions      |
+| **Dwolla**   | Initiates money transfers                             |
+| **Appwrite** | Handles auth and stores user-related data             |
+| **Sentry**   | Tracks errors and performance issues across the stack |
 
 ---
 
